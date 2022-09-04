@@ -32,3 +32,19 @@ for (int i = 0; i < units; i++)
         count++;
     }
 }
+
+string[] result = new string[count];
+string index = String.Empty;
+int result_index = 0;
+
+for (int i = 0; i < indexes.Length; i++)
+{
+    if (indexes[i] != ',') index += Convert.ToString(indexes[i]);
+    else
+    {
+        result[result_index] = list[Convert.ToInt32(index)];
+        Console.Write($"{result[result_index]}; ");
+        result_index++;
+        index = String.Empty;
+    }
+}
